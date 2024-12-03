@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="asm2.css">
+    <style>
+        /* CSS để định dạng nền hình ảnh */
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden; /* Ẩn thanh cuộn */
+            background-image: url('nen asus.webp'); /* Thay 'duongdan/hinhnen.jpg' bằng đường dẫn thực tế đến hình ảnh của bạn */
+            background-size: cover; /* Đảm bảo hình ảnh phủ kín màn hình */
+            background-position: center; /* Căn giữa hình ảnh */
+        }
+
+        .to {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: minmax(100px, auto);
+            position: relative; /* Để nội dung nằm trên nền */
+            z-index: 1; /* Đặt nội dung ở trên hình nền */
+        }
+
+        .form {
+            border: 1px solid #80808000;
+            grid-column: 6/9;
+            grid-row: 3;
+            height: 470px;
+            width: 292px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0px 0px 14px 0px grey;
+            background-color: rgba(255, 255, 255, 0.8); /* Nền mờ cho form */
+        }
+    </style>
+</head>
+<body>
+    <div class="to">
+        <div class="form">
+            <h2>Log in</h2>
+            <label>Login Name</label>
+            <input type="text" id="username" required>
+            <label>Password</label>
+            <input type="password" id="password" required>
+            <label>Phone Number</label>
+            <input type="text" id="phone" required>
+
+            <input id="submit" type="button" value="Log in" onclick="handleLogin()">
+        </div>				
+    </div>
+    <p style="text-align: center; color: white;">Don't have an account? <a href="register.html" style="color: rgb(5, 9, 241);">Sign up now!</a></p>
+
+    <script>
+        function handleLogin() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const phone = document.getElementById("phone").value;
+    
+            // Giả sử dữ liệu tài khoản đã tồn tại trong localStorage
+            const userData = JSON.parse(localStorage.getItem(username));
+    
+            if (userData && userData.password === password && userData.phone === phone) {
+                // Lưu thông tin đăng nhập vào localStorage
+                localStorage.setItem("loggedIn", "true");
+                localStorage.setItem("loggedInUser", JSON.stringify({ username, phone }));
+    
+                // Chuyển hướng đến sảnh
+                window.location.href = 'sảnh.html';
+            } else {
+                alert("Incorrect username, password, or phone number.");
+            }
+        }
+    </script>
+    
+    
+</body>
+</html>

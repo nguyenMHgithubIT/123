@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán</title>
+    <link rel="stylesheet" href="checkout.css"> <!-- Liên kết đến file CSS mới -->
+</head>
+<body>
+
+    <h1>Payment Successfully Made</h1>
+    <form id="checkout-form">
+        <div id="order-summary"></div>
+        <div id="bonus-products" style="margin-top: 20px;"></div> <!-- Phần sản phẩm tặng kèm -->
+        
+    <div class="button-container">
+        <button type="button" onclick="goToHome()">Back to home page</button> 
+        <button type="button" onclick="logout()">Log out</button>
+    </div>
+    </form>
+
+    <script>
+ window.onload = function () {
+
+    // Hiển thị sản phẩm tặng kèm
+const bonusProducts = [
+    { name: 'Loa Bluetooth AVA+ MiniPod Y23', description: '', price: "90,000đ", imageUrl: 'loa.jpg' },
+    { name: 'Smart watch BeFit Sporty 2 44.5mm Brown', description: 'Applicable when buying more than 3 products', price: "900,000đ", imageUrl: 'dongho.jpg' },
+];
+
+const bonusContainer = document.getElementById('bonus-products');
+if (bonusContainer) {
+    let bonusHtml = '<h3>Free products:</h3><ul>';
+    bonusProducts.forEach(product => {
+        bonusHtml += `
+            <li style="display: flex; align-items: center; margin-bottom: 10px;">
+                <img src="${product.imageUrl}" alt="${product.name}" style="width: 50px; height: 50px; margin-right: 10px;" />
+                <span>
+                    <strong>${product.name}</strong> ${product.description ? `- ${product.description}` : ""}
+                    <br>(Price: ${product.price})
+                </span>
+            </li>`;
+    });
+    bonusHtml += '</ul>';
+    bonusContainer.innerHTML = bonusHtml;
+} else {
+    console.error('Bonus products container not found.');
+}
+
+    // Lấy thông tin người dùng
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (!loggedInUser) {
+        alert("You need to log in first!");
+        window.location.href = 'login.html';
+        return;
+    }
+
+    // Hiển thị thông tin người dùng
+    const username = loggedInUser.username;
+    const phone = loggedInUser.phone;
+    console.log(`Logged in as: ${username}, Phone: ${phone}`);
+
+    // Hiển thị giỏ hàng
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const orderSummary = document.getElementById('order-summary');
+
+    if (cart.length > 0) {
+        let totalPrice = 0;
+        let summaryHtml = '<h3>Purchased orders:</h3><table style="width: 100%; border-collapse: collapse;"><tr><th>Product Name</th><th>Quantity</th><th>Price</th><th>Total</th></tr>';
+
+        cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            summaryHtml += `<tr>
+                                <td>${item.name}</td>
+                                <td>${item.quantity}</td>
+                                <td>${item.price.toLocaleString()}đ</td>
+                                <td>${itemTotal.toLocaleString()}đ</td>
+                            </tr>`;
+            totalPrice += itemTotal;
+        });
+
+        
+
+        
+
+        summaryHtml += `</table><h3>Total amount: ${totalPrice.toLocaleString()}đ</h3>`;
+        orderSummary.innerHTML = summaryHtml;
+    } else {
+        orderSummary.innerHTML = '<p>Cart is empty!</p>';
+    }
+};
+       function logout() {
+       localStorage.removeItem('loggedInUser'); // Xóa thông tin đăng nhập
+       window.location.href = 'login.html'; // Chuyển đến trang đăng nhập
+}
+
+       function goToHome() {
+            window.location.href = 'sảnh.html'; // Chuyển đến trang chủ
+        }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="asm2.css">
+    <style>
+        /* CSS để định dạng nền hình ảnh */
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden; /* Ẩn thanh cuộn */
+            background-image: url('nen asus.webp'); /* Thay 'duongdan/hinhnen.jpg' bằng đường dẫn thực tế đến hình ảnh của bạn */
+            background-size: cover; /* Đảm bảo hình ảnh phủ kín màn hình */
+            background-position: center; /* Căn giữa hình ảnh */
+        }
+
+        .to {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: minmax(100px, auto);
+            position: relative; /* Để nội dung nằm trên nền */
+            z-index: 1; /* Đặt nội dung ở trên hình nền */
+        }
+
+        .form {
+            border: 1px solid #80808000;
+            grid-column: 6/9;
+            grid-row: 3;
+            height: 470px;
+            width: 292px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0px 0px 14px 0px grey;
+            background-color: rgba(255, 255, 255, 0.8); /* Nền mờ cho form */
+        }
+
+        h2 {
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+        .login-link {
+            text-align: center;
+            color: #00BCD4; /* Màu chữ */
+            font-weight: bold; /* Đậm chữ */
+            transition: color 0.3s; /* Hiệu ứng chuyển màu */
+        }
+
+        .login-link:hover {
+            color: #fc466b; /* Màu chữ khi hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="to">
+        <div class="form">
+            <h2>Register Account</h2>
+            <label>Full name</label>
+            <input type="text" id="hoten" required>
+            <label>Login Name</label>
+            <input type="text" id="username" required>
+            <label>Password</label>
+            <input type="password" id="password" required>	
+            <label>Phone Number</label>
+            <input type="text" id="phone" required>
+
+            <input id="submit" type="button" value="Send" onclick="handleRegister()">
+        </div>				
+    </div>
+    <p style="text-align: center; color: white;">Already have an account? <a href="login.html" style="color: rgb(36, 0, 168);">Sign in now!</a></p>
+
+    <script>
+        function handleRegister() {
+            // Lưu thông tin người dùng vào localStorage
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const hoten = document.getElementById("hoten").value;
+            const phone = document.getElementById("phone").value;
+
+            // Giả sử bạn muốn lưu một đối tượng người dùng vào localStorage
+            // Lưu thông tin vào localStorage
+    const userData = { username, password, hoten, phone };
+    localStorage.setItem(username, JSON.stringify(userData));
+    localStorage.setItem("username", username); // Lưu username
+    localStorage.setItem("phone", phone); // Lưu phone
+
+            
+
+            // Sau khi đăng ký thành công, chuyển hướng đến trang đăng nhập
+            alert("Registration successful! Please login.");
+            window.location.href = 'login.html'; // Chuyển đến trang đăng nhập
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,628 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    height: 80%; /* Đảm bảo body chiếm toàn bộ chiều cao */
+}
+
+
+
+/* đăng nhập */
+input[type="email"], input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+button {
+    padding: 15px;
+    background-color: #4285F4;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #cc2f3a;
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+p a {
+    color: #4285F4;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #b6dfeb;
+    padding-top: 0px; /* Chừa khoảng trống cho header cố định */
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* trang chủ */
+
+/* styles.css */
+
+/* Reset */
+.actions {
+    display: flex; /* Sử dụng flexbox để căn chỉnh các nút */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.actions input {
+    margin-right: 10px; /* Khoảng cách giữa ô tìm kiếm và nút tìm */
+}
+
+.actions .search-btn,
+.actions .open-cart,
+.actions .login-link {
+    margin-left: 15px; /* Khoảng cách giữa các nút */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Thanh công cụ */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 60px;
+    padding: 20px; /* Khoảng cách cho thanh điều hướng */
+    background-color: rgb(37, 35, 35); /* Nền trong suốt */
+}
+
+.navbar .logo {
+    font-size: 0rem;
+    font-weight: bold;
+    
+
+   
+}
+.logo img {
+    height: 50px; /* Chiều cao của logo */
+    margin-right: 10; /* Khoảng cách giữa logo và menu */
+}
+
+.navbar .menu a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 30px;
+    font-size: 1.5rem;
+    
+}
+
+.navbar .menu a:hover {
+    text-decoration: underline;
+}
+
+.navbar .actions {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .actions input {
+    padding: 5px;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.navbar .actions .search-btn,
+.navbar .actions .cart-btn {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 15px 50px;
+    cursor: pointer;
+  
+}
+
+.navbar .actions .search-btn:hover,
+.navbar .actions .cart-btn:hover {
+    background-color: #cf1d1d;
+   
+    
+}
+
+.actions {
+    display: flex; /* Hiển thị các hành động theo hàng ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.search-btn, .open-cart, .login-link {
+    margin-left: 10px; /* Khoảng cách giữa các nút */
+    display: flex; /* Để căn giữa biểu tượng và văn bản */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.search-btn i, .open-cart i {
+    margin-right: 5px; /* Khoảng cách giữa biểu tượng và văn bản */
+}
+
+/* Sản phẩm */
+/* Danh sách sản phẩm */
+/* Đảm bảo container cha đủ lớn */
+.product-list {
+    padding: 20px;
+    text-align: center;
+    display: flex;       
+    overflow-y: auto; /* Cho phép cuộn dọc */    
+    max-height: 600px; /* Chiều cao tối đa cho phần sản phẩm */
+    /* flex-wrap: wrap;           Cho phép các phần tử xuống dòng khi không đủ chỗ */
+    /* justify-content:          flex-start; Căn trái các sản phẩm */
+  
+    justify-content: space-between; /* Đẩy các phần tử ra hai bên */
+    align-items: flex-start; /* Căn chỉnh các phần tử theo chiều dọc */
+    
+}
+.ad-video {
+    flex: 480px; /* Chiều rộng cố định cho video quảng cáo */
+    margin: 10px; /* Khoảng cách giữa video và danh sách sản phẩm */
+    overflow: hidden; /* Để đảm bảo không có phần dư thừa */
+}
+
+/* Sắp xếp các sản phẩm */
+.products {
+    border-radius: 20px; /* Bo tròn góc */
+    display: flex;
+    flex-wrap: wrap; /* Cho phép xuống dòng */  
+    justify-content: center; /* Căn giữa các sản phẩm */
+    gap: 20px; /* Khoảng cách giữa các sản phẩm */
+    max-width: 1200px; /* Đặt chiều rộng container */
+    margin: 0 auto; /* Căn giữa container */
+    width: 1500px; /* Chiều rộng cố định cho sản phẩm để có thể sử dụng được overflow-y: auto; trong .product-list {*/
+    
+    
+    
+}
+
+/* Thiết lập chiều rộng mỗi sản phẩm */
+.product {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(25% - 20px); /* Mỗi sản phẩm chiếm 25% chiều rộng trừ đi khoảng cách */
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    
+}
+
+.product img {
+    max-width: 100%;
+    height: auto; /* Đảm bảo ảnh không bị méo */
+    border-radius: 5px;
+    
+}
+
+.product h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.product p {
+    color: #555;
+}
+p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+.product button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.product button:hover {
+    background-color: #ec080f;
+}
+
+
+
+/* giỏ hàng */
+.cart-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.571); /* Nền trắng với độ trong suốt 90% */
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(237, 235, 235, 0.9);
+    max-width: 1100px;
+    width: 100%;
+    overflow-y: auto; /* Cho phép cuộn dọc */
+    max-height: 600px; /* Chiều cao tối đa cho giỏ hàng */
+    
+}
+     /* Thay đổi màu chữ trong giỏ hàng */
+    .cart-container h2, /* Tiêu đề giỏ hàng */
+    .cart-container h3, /* Tiêu đề tổng tiền */
+    .cart-container p { /* Tất cả các đoạn văn bản */
+    color: #ffffff; /* Màu chữ bạn muốn */
+
+}
+
+.cart-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 15px; /* Khoảng cách giữa các sản phẩm trong giỏ hàng */
+}
+.cart-item:last-child {
+    border-bottom: none;
+}
+.cart-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+/* đăng xuất nut button đăng xuất */
+
+a.login-link {
+    text-decoration: none; /* Bỏ gạch chân */
+    color: #fff; /* Màu chữ trắng */
+    background-color: #007bff; /* Màu nền xanh dương */
+    padding: 15px 20px; /* Khoảng cách bên trong */
+    border-radius: 5px; /* Bo góc */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
+    font-weight: bold; /* Chữ đậm */
+}
+
+a.login-link:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+}
+
+
+/* đăng ký và đăng nhập */
+*{
+    margin:0;
+    padding:0;
+    border:none;
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    overflow: hidden;
+    background-color: #ededed;
+}
+.to {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: minmax(100px,auto);
+}
+
+.form {
+    border: 1px solid #80808000;
+    grid-column: 6/9;
+    grid-row: 3;
+    height: 470px;
+    width: 292px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0px 0px 14px 0px grey;
+    background-color: white;
+}
+h2 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+i.fab.fa-app-store-ios {
+    display: block;
+    margin-bottom: 50px;
+    font-size: 28px;
+}
+
+label {
+    margin-left: -126px;
+    display: block;
+    font-weight: lighter;
+
+}
+input{
+    display: block;
+    border-bottom: 2px solid #00BCD4;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    outline-style: none;
+}
+input[type="text"] {
+    padding: 5px;
+    width: 70%;
+}
+
+input#submit {
+    padding: 7px;
+    width: 50%;
+    border-radius: 10px;
+    border: none;
+    position: absolute;
+    bottom: 10px;
+    cursor: pointer;
+    background: linear-gradient(to right, #fc00ff, #00dbde);
+}
+input#submit:hover{
+
+    background: linear-gradient(to right, #fc466b, #3f5efb); 
+}
+
+
+
+/* sản phẩm trong thanh menu */
+.menu {
+    position: relative; /* Để menu có thể chứa dropdown */
+}
+
+.dropdown {
+    display: inline-block; /* Để nó nằm thẳng hàng với các mục khác */
+    position: relative; /* Để chứa menu thả xuống */
+}
+
+
+#product-submenu {
+    position: absolute; /* Để menu thả xuống nằm bên dưới */
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền trắng với độ trong suốt 80% */
+    border: 1px solid #ddd; /* Đường viền cho danh sách */
+    z-index: 1000; /* Đảm bảo menu hiển thị trên các phần tử khác */
+    display: none; /* Ẩn menu theo mặc định */
+    left: 0; /* Căn chỉnh bên trái */
+    top: 100%; /* Đặt menu ngay dưới mục "Sản Phẩm" */
+}
+
+.dropdown:hover #product-submenu {
+    display: block; /* Hiển thị menu khi di chuột vào dropdown */
+}
+
+#product-submenu ul {
+    list-style-type: none; /* Không có dấu chấm đầu dòng */
+    padding: 5px; /* Khoảng cách bên trong */
+    margin: 0; /* Khoảng cách bên ngoài */
+}
+
+#product-submenu li {
+    padding: 8px 0; /* Khoảng cách giữa các mục */
+}
+
+#product-submenu li a {
+    text-decoration: none; /* Không gạch chân */
+    color: rgb(254, 254, 254); /* Màu chữ */
+}
+
+#product-submenu li a:hover {
+    background-color: #c6c0c069; /* Hiệu ứng hover cho các mục */
+}
+
+
+
+/* phần liên hệ  */
+/* Modal khi ẩn */
+.modal {
+    display: none; /* Ẩn mặc định */
+    position: fixed; /* Để modal luôn nằm trên cùng của trang */
+    z-index: 1000; /* Đảm bảo modal xuất hiện trên các phần tử khác */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Màu nền mờ cho modal */
+}
+
+/* Nội dung của modal */
+.modal-content {
+    background-color: #ffffff;
+    padding: 50px;
+    margin: 15% auto;
+    width: 80%;
+    max-width: 1000px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Điều chỉnh bố cục dọc */
+}
+
+/* Nút đóng modal */
+.close-btn {
+    font-size: 50px;
+    color: #000000;
+    cursor: pointer;
+    position: absolute;
+    top: 250px;
+    right: 360px;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Cải tiến layout phần ảnh */
+.contact-info {
+    display: flex;
+    justify-content: space-between; /* Chia đều không gian giữa chữ và ảnh */
+    flex-wrap: wrap; /* Đảm bảo các phần tử có thể xuống dòng nếu không đủ không gian */
+    gap: 20px; /* Khoảng cách giữa các phần tử */
+}
+
+/* Phần chữ (contact-text) */
+.contact-text {
+    flex: 1; /* Phần chữ chiếm toàn bộ không gian còn lại */
+}
+
+/* Cải tiến hình ảnh */
+.contact-images img,
+.bottom-images img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+
+
+/* Các ảnh ở dưới cùng */
+.bottom-images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Đảm bảo các ảnh và chữ dưới ảnh căn chỉnh hợp lý */
+.image-item {
+    text-align: center; /* Căn giữa ảnh và văn bản */
+    width: 30%; /* Các ảnh chiếm 30% chiều rộng */
+    margin: 10px;
+}
+
+.image-item p {
+    margin-top: 0px;
+    font-size: 20px;
+    color: #333;
+    
+}
+
+/* Chỉnh sửa layout ảnh trong phần contact-images */
+.contact-images .image-item {
+    width: 20%; /* Đảm bảo ảnh không quá rộng trong phần contact-images */
+}
+
+.bottom-images .image-item {
+    width: 10%; /* Ảnh dưới chiếm 30% chiều rộng */
+}
+
+
+
+
+/* profile */
+
+/* Modal chung */
+#profileModal {
+    display: none; /* Ẩn modal mặc định */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Màu nền mờ cho toàn bộ modal */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal nội dung */
+#profileModal .modal-content {
+    background: rgba(0, 0, 0, 0.6); /* Nền trong suốt màu trắng */
+    padding: 20px;
+    border-radius: 10px;
+    width: 1000px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Làm mờ nội dung phía sau */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Đường viền nhẹ */
+}
+
+/* Nút đóng modal */
+#profileModal .close-btn {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 50px;
+    cursor: pointer;
+    color: #ff0000;
+}
+
+/* Tiêu đề modal */
+#profileModal h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+/* Nội dung bảng thông tin profile */
+#profileModal p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+#profileModal p strong {
+    color: #ffffff; /* Màu chữ đậm */
+}
+
+#profileModal p span {
+    color: #ff0000; /* Màu chữ phụ */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

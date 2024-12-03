@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #419c48;
+    background-image: url('den.jpg'); /* Đường dẫn đến hình ảnh background */
+    background-size: cover; /* Đảm bảo hình ảnh phủ kín toàn bộ */
+    background-position: center; /* Đặt hình ảnh ở giữa */
+     color: #0f0101; /* Màu chữ mặc định là trắng, nếu cần có thể điều chỉnh */
+    margin: 0;
+    padding: 20px;
+    background-color: rgba(17, 223, 55, 0.9); /* Nền trong suốt */
+    font-family: Arial, sans-serif; /* Font chữ */
+}
+
+h1 {
+    text-align: center; /* Căn giữa tiêu đề */
+    color: #f9f5f5;
+}
+
+#checkout-form {
+    width: 100%; /* Để form chiếm toàn bộ chiều rộng */
+    background-color: rgba(255, 255, 255, 0.2); /* Nền bảng trong suốt */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 0 auto; /* Căn giữa form */
+    max-width: 900px; /* Giới hạn chiều rộng tối đa để form không quá rộng */
+}
+
+button {
+    background-color: rgba(255, 253, 253, 0.5); /* Nền bảng trong suốt */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 25px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block; /* Đặt button thành block để dễ căn giữa */
+    width: 10%; /* Đặt chiều rộng nút 100% */
+    margin-top: 10px; /* Khoảng cách giữa các nút */
+}
+
+button:hover {
+    background-color: #7a7b7b;
+}
+
+#order-summary, #bonus-products {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto; /* Căn giữa các phần tóm tắt và sản phẩm tặng kèm */
+    max-width: 850px; /* Chiều rộng tối đa cho các phần này */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+h3 {
+    margin-bottom: 5px; /* Khoảng cách dưới tiêu đề */
+    color: #555;
+    
+    text-align: center; /* Căn giữa tiêu đề các phần */
+    margin-bottom: 1px; /* Khoảng cách dưới tiêu đề */
+}
+
+.bonus-product-img {
+    width: 50px; /* Kích thước mặc định */
+    height: 50px; /* Kích thước mặc định */
+    margin-right: 10px; /* Khoảng cách giữa hình ảnh và mô tả */
+    transition: transform 0.3s; /* Hiệu ứng chuyển động mượt mà khi phóng to */
+}
+
+.bonus-product-img:hover {
+    transform: scale(1.5); /* Phóng to khi di chuột */
+}
+
+table {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1); /* Nền bảng trong suốt */
+    margin-top: 10px;
+    border: 1px solid #ddd; /* Đường viền */
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd; /* Đường viền cho ô */
+    padding: 10px; /* Khoảng cách trong ô */
+    text-align: left; /* Căn trái nội dung */
+    background-color: rgba(222, 129, 129, 0.2); /* Nền ô trong suốt */
+}
+
+th {
+    background-color: rgba(0, 123, 255, 0.2); /* Màu nền cho tiêu đề bảng */
+}
+
+
+/* nút đăng xuất */
+.button-container {
+    display: flex; /* Sử dụng flexbox để sắp xếp các nút */
+    justify-content: space-between; /* Đẩy nút ra hai bên */
+    margin-top: 20px; /* Khoảng cách phía trên */
+    width: 100%; /* Để container chiếm toàn bộ chiều rộng của form */
+}
+
+.button-container button {
+    padding: 20px 15px; /* Khoảng cách bên trong nút */
+    border: none; /* Bỏ đường viền */
+    border-radius: 15px; /* Bo góc cho nút */
+    background-color: #010101; /* Màu nền cho nút */
+    color: white; /* Màu chữ */
+    cursor: pointer; /* Con trỏ khi di chuột */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
+    flex: 1; /* Chiếm đều không gian */
+    margin: 0 100px; /* Khoảng cách giữa các nút */
+}
+
+.button-container button:hover {
+    background-color: #0056b3; /* Màu nền khi di chuột qua */
+}

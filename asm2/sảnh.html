@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ</title>
+    <link rel="stylesheet" href="asm2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <script>
+        // Kiểm tra xem người dùng đã đăng nhập chưa
+        if (!localStorage.getItem("loggedIn")) {
+            alert("Bạn cần đăng nhập trước khi vào trang này.");
+            window.location.href = "login.html"; // Chuyển đến trang đăng nhập
+        }
+    </script>
+
+    <!-- Thanh công cụ -->
+    
+    <header class="navbar">
+        <div class="logo">
+            <img src="laptop icon.jpg" alt="Logo" style="height: 60px;"/> <!-- Thay đổi đường dẫn đến logo của bạn -->
+        </div>
+
+        <nav class="menu">
+            <a href="#" onclick="goToHome()">Home</a>
+            <div class="dropdown" onmouseover="showProducts()" onmouseout="hideProducts()">
+                <a href="#">Product</a>
+        <div id="product-submenu">
+            <ul>
+                <li><a href="#" onclick="filterProducts('asus')">Asus</a></li>
+                <li><a href="#" onclick="filterProducts('acer')">Acer</a></li>
+                <li><a href="#" onclick="filterProducts('lenovo')">Lenovo</a></li>
+                <li><a href="#" onclick="filterProducts('macbook')">MacBook</a></li>
+                <li><a href="#" onclick="filterProducts('hp')">HP</a></li> <!-- Đảm bảo từ khóa đúng -->
+                <li><a href="#" onclick="filterProducts('dell')">Dell</a></li>
+                <li><a href="#" onclick="filterProducts('bàn phím')">Keyboard</a></li>
+                <li><a href="#" onclick="filterProducts('chuột')">Mouse</a></li>
+                <li><a href="#" onclick="filterProducts('tai nghe')">Earphone</a></li>
+                <li><a href="#" onclick="filterProducts('mic')">Mic</a></li>
+            </ul>
+        </div>
+    </div>
+    <a href="javascript:void(0);" onclick="openContact()">Contact</a>
+    <a href="javascript:void(0);" onclick="openProfileModal()">Profile</a>
+    
+           
+        </nav>
+
+        <!-- Thay đổi phần tìm kiếm trong header -->
+        <div class="actions">
+            <input type="text" id="search-input" placeholder="Search Products...">
+            <button class="search-btn" onclick="searchProduct()">
+                <i class="fas fa-search"></i>Search
+            </button>
+            <button class="open-cart">
+                <i class="fas fa-shopping-cart"></i>Shopping Cart(0)
+            </button>
+            <a href="login.html" class="login-link">Log out</a>
+        </div>
+    </header>
+    <!-- Danh sách sản phẩm -->
+    <section class="product-list">
+        <iframe width="300" height="580" src="https://www.youtube.com/embed/v0oASOYTq0s?autoplay=1&mute=1&loop=1&playlist=v0oASOYTq0s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <div class="products">
+<!-- asus -->
+            <div class="product">
+                <img src="asus1.jpg" alt="Product 1">
+                <h3>Laptop Asus Vivobook S 14 OLED S5406MA Ultra 5 125H/16GB/1TB/120Hz/Win11</h3>
+                <p>Giá: 24,000,000đ</p>
+                <button class="add-to-cart">Buy Now</button>
+            </div>
+
+            <div class="product">
+                <img src="asus2.jpg" alt="Product 1">
+                <h3>Laptop Asus Vivobook 15 OLED A1505VA i5 13500H/16GB/512GB/120Hz</h3>
+                <p>Giá: 17,000,000đ</p>
+                <button class="add-to-cart">Buy Now</button>
+            </div>
+
+            
+
+            <div class="product">
+                <img src="asus3.jpg" alt="Product 1">
+                <h3>Laptop Asus Zenbook 14 OLED UX3405MA Ultra 5 125H/16GB/512GB</h3>
+                <p>Giá: 26,000,000đ</p>
+                <button class="add-to-cart">Buy Now</button>
+            </div>
+
+            <div class="product">
+                <img src="asus4.jpg" alt="Product 1">
+                <h3>Laptop Asus Vivobook 15 X1504ZA i3 1215U/8GB/512GB/Win11</h3>
+                <p>Giá: 9,000,000đ</p>
+                <button class="add-to-cart">Buy Now</button>
+            </div>
+
+<!-- acer -->
+            <div class="product">
+                <img src="acer1.jpg" alt="Product 5">
+                <h3>Laptop Acer Predator Helios Neo PHN16 71 53M7 i5 13500HX/16GB/512GB/8GB</h3>
+                <p>Giá: 25,000,000đ</p>
+                <button class="add-to-cart">Buy Now</button>
+            </div>
+
+            <div class="product">
+                <img src="acer2.jpg" alt="Product 6">
+                <h3>Laptop Acer Aspire Lite 14 51M 36PN i3 1215U/8GB/512GB/Win11 (NX.KTWSV.001)</h3>
+                <p>Giá: 9,000,000đ</p>
+                <button class="add-to-cart">Buy Now</button>
+            </div>
+
+            <div class="product">
+                <img src="acer3.jpg" alt="Product 7">
+                <h3>Laptop Acer Aspire 3 A315 59 5283 i5 1235U/8GB/512GB/Win11 (NX.K6TSV.00B)</h3>
+                <p>Giá: 12,000,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>        
+            </div>
+
+            <div class="product">
+                <img src="acer4.jpg" alt="Product 8">
+                <h3>Laptop Acer Gaming Nitro V ANV15 51 55CA i5 13420H/16GB/512GB/6GB RTX4050/144Hz/Win11</h3>
+                <p>Giá: 24,000,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>
+            </div>
+
+            <div class="ad-banner">
+                <img src="quangcao.jpg" alt="Quảng cáo" style="width: 50%; height: auto;">
+            </div>
+
+<!-- lenovo -->
+            <div class="product">
+                <img src="lenovo1.jpg" alt="Product 9">
+                <h3>Laptop Lenovo Ideapad Slim 3 15IAH8 i5 12450H/16GB/512GB/Win11</h3>
+                <p>Giá: 13,000,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>
+            </div>
+
+            <div class="product">
+                <img src="lenovo2.jpg" alt="Product 10">
+                <h3>Laptop Lenovo Gaming LOQ 15IAX9 i5 12450HX/16GB/512GB/6GB </h3>
+                <p>Giá: 21,000,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>
+            </div>
+
+            <div class="product">
+                <img src="lenovo3.jpg" alt="Product 11">
+                <h3>Laptop Lenovo Ideapad Slim 5 14IAH8 i5 12450H/16GB/1TB/Win11</h3>
+                <p>Giá: 16,000,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>
+            </div>
+
+            <div class="product">
+                <img src="lenovo4.jpg" alt="Product 12">
+                <h3>Laptop Lenovo V14 G4 i7 1355U/16GB/512GB/Win11 (83A00012VN)</h3>
+                <p>Giá: 16,900,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>
+            </div>
+
+<!-- mac book -->
+             <div class="product">
+                <img src="macbook1.jpg" alt="Product 13">
+                <h3>Laptop Apple MacBook Air 13 inch M2 8GB/256GB </h3>
+                <p>Giá: 23,900,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>
+            </div>
+
+            <div class="product">
+                <img src="macbook2.jpg" alt="Product 14">
+                <h3>Laptop MacBook Air 13 inch M3 16GB/256GB</h3>
+                <p>Giá: 29,900,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>
+            </div>
+
+            <div class="product">
+                <img src="macbook3.jpg" alt="Product 15">
+                <h3>Laptop Apple MacBook Air 13 inch M2 16GB/256GB/10GPU</h3>
+                <p>Giá: 26,900,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>
+            </div>
+
+            <div class="product">
+                <img src="macbook4.jpg" alt="Product 16">
+                <h3>Laptop Apple MacBook Pro 14 inch M3 16GB/512GB</h3>
+                <p>Giá: 40,000,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>
+            </div>
+
+<!-- bàm phím -->
+            <div class="product">
+                <img src="bamphim1.jpg" alt="Product 17">
+                <h3>Bàn Phím iPad Pro Logitech Combo Touch 11 inch M4</h3>
+                <p>Giá: 6,000,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>
+            </div>
+
+            <div class="product">
+                <img src="bamphim2.jpg" alt="Product 18">
+                <h3>Chuột Có dây Gaming Logitech G102 Gen2 Lightsync</h3>
+                <p>Giá: 3,000,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>
+            </div>
+
+            <div class="product">
+                <img src="bamphim3.jpg" alt="Product 19">
+                <h3>Chuột Không dây Zadez M325 Tuxedo</h3>
+                <p>Giá: 1,000,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>
+            </div>
+
+            <div class="product">
+                <img src="bamphim4.jpg" alt="Product 20">
+                <h3>Chuột Có dây Gaming Rapoo V11s </h3>
+                <p>Giá: 4,000,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>
+            </div>
+
+            <!-- chuột  -->
+            <div class="product">
+                <img src="chuot1.jpg" alt="Product 21">
+                <h3>Chuột Không dây Logitech M185 </h3>
+                <p>Giá: 300,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>
+            </div>
+
+            <div class="product">
+                <img src="chuot2.jpg" alt="Product 22">
+                <h3>Chuột Có dây Gaming Logitech G102 Gen2 </h3>
+                <p>Giá: 100,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>
+            </div>
+
+            <div class="product">
+                <img src="chuot3.jpg" alt="Product 23">
+                <h3>Chuột Không dây Zadez M325 Tuxedo </h3>
+                <p>Giá: 400,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>
+            </div>
+
+            <div class="product">
+                <img src="chuot4.jpg" alt="Product 24">
+                <h3>Chuột Có dây Gaming Rapoo V11s </h3>
+                <p>Giá: 200,000đ</p>
+                <button class="add-to-cart">Mua ngay</button>
+            </div>
+
+            </div>
+            <div class="ad-video right-ad">
+                <iframe width="300" height="580" src="https://www.youtube.com/embed/XIPd8eEal_g?autoplay=1&mute=1&loop=1&playlist=XIPd8eEal_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>      
+    </section>
+    <script src="script.js"></script>
+
+    
+<!-- Thêm bảng liên hệ (Modal) -->
+<!-- Modal -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeContact()">×</span>
+        
+
+        <!-- Thông tin liên hệ -->
+        <div class="contact-info">
+            <div class="contact-text">
+                <p><strong>Address 1:</strong> Trịnh Văn Bô, Nam Từ Liêm, Hà Nội, Việt Nam</p>
+                <p><strong>Address 2:</strong> Quận 1, TP. Hồ Chí Minh, Việt Nam</p>
+                <p><strong>Phone number:</strong> +84 123 456 789</p>
+            </div>   
+        </div>
+
+        <!-- 3 ảnh ở dưới cùng -->
+        <div class="bottom-images">
+            <div class="image-item">
+                <img src="fb2.jpg" alt="Image 3" class="bottom-image">
+                <p>Facebook</p>
+            </div>
+            <div class="image-item">
+                <img src="ap1.jpg" alt="Image 4" class="bottom-image">
+                <p>App Store</p>
+            </div>
+            <div class="image-item">
+                <img src="tiktok.jpg" alt="Image 5" class="bottom-image">
+                <p>Tik Tok</p>
+            </div>
+            <div class="image-item">
+                <img src="pay.jpg" alt="Image 5" class="bottom-image">
+                <p>Google Pay</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="profileModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeProfile()">×</span>
+        
+        <h2>Profile Information</h2>
+        <p><strong>Login Name:</strong> <span id="profile-username"></span></p>
+        <p><strong>Phone Number:</strong> <span id="profile-phone"></span></p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
